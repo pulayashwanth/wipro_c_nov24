@@ -1,0 +1,556 @@
+ASSIGNMENTS:
+
+1. Add the prototypes of the I/P functions which the trainer gave on day1.
+2.
+
+p14
+Check if a number is perfect square
+p15
+Check if a character is an alphabet
+p16
+Check if a character is an alphanumeric
+p17
+Check if a character is a digit
+p18
+Check if a letter is small case
+p19
+Check if a year is Leap year
+p20
+Declare 3 character variables and accept values, raining=r sunny=s cloudy=c
+Allow the person to go out only if it is:
+	1. only sunny
+	2. sunny and raining
+-------------------------------------------------------------
+p29
+FARMER PROBLEM STATEMENT
+
+Mahesh is a farmer and owns 80 acres of land. His land is equally divided into 5 segments. He grows tomatoes in the 1st segment, potatoes in the 2nd segment, cabbage in the 3rd segment, sunflower in the 4th segment and sugarcane in the 5th segment.
+He is converting his land from chemical-driven farming to chemical-free farming. Mahesh starts with the conversion of vegetables into chemical-free produce. He spends the first 6 months doing the same.
+He then converts the sunflower land bank into chemical-free farming. This takes him another 4 months. Finally, he converts sugarcane into chemical-free farming over the next 4 months.
+He gets a yield of the following for tomatoes. 30% of his tomato land gives him 10 tonne yield per acre.
+The remaining 70% of his tomato land gives him 12 tonnes yield per acre.
+The selling price of tomato is Rs. 7 per Kg.
+The yield of potatoes is 10 tonnes per acre. He sells each kg at Rs. 20.
+The yield of cabbage is 14 tonnes per acre. He sells each kg at Rs. 24.
+The yield of sunflowers is 0.7 tonnes per acre. He sells each kg at Rs. 200.
+The yield of sugarcane is 45 tonnes per acre. He sells each tonne at Rs. 4,000.
+All the crops are sowed at the same time. Mahesh gets the above yield at the above-mentioned rate in one crop cycle across his entire land of 80 acres.
+What is
+a. The overall sales achieved by Mahesh from the 80 acres of land.
+b. Sales realisation from chemical-free farming at the end of 11 months?
+
+total_land = 80
+no_of_segments = 5
+each_segment = total_land // no_of_segments
+
+tamoto_yield_tonnes = (each_segment * 0.3 * 10) + (each_segment * 0.7 *12)
+tomato_sales_amount = int(tamoto_yield_tonnes * 1000 * 7)
+
+potato_yeild_tonnes = each_segment * 10
+potato_sales_amount = potato_yeild_tonnes * 1000 * 20
+
+cabbage_yeild_tonnes = each_segment * 14
+cabbage_sales_amount = cabbage_yeild_tonnes * 1000 * 24
+
+sunflower_yeild_tonnes = each_segment * 0.7
+sunflower_sales_amount = int(sunflower_yeild_tonnes * 1000 * 200)
+
+sugarcane_yeild_tonnes = each_segment * 45
+sugarcane_sales_amount = sugarcane_yeild_tonnes * 4000
+
+total_sales_amount = tomato_sales_amount + potato_sales_amount + sunflower_sales_amount + sugarcane_sales_amount
+------------------------------------------------------------
+Why an un initialized pointer is called as wild pointer ?
+
+float fArray[] = {2.2f, 4.4f, 1.5f, 9.1f, 6.75f};
+
+print these:
+
+fArray, fArray+1, fArray-1, fArray+2
+// All of these are addresses
+
+
+*fArray, *fArray+1, *fArray + *fArray
+// All of these are values
+
+
+&fArray, &fArray+1, &fArray-1, &fArray+2
+// All of these are addresses
+---------------------------------------------------------------------
+
+* An Array is a variable of variables.
+* The need of an Array arose to overcome the problem of
+maintaining too many variable names.
+* In an Array all the elements are of same DT and same size.
+* In java, an Array is an Object.
+* Size of an Array must be fixed at the time of declaration.
+* Size of an Array is always fixed and it cannot ever be changed.
+* To access/reach an element in an Array, we use the INDEX
+within the subscript.
+* Index of any Array starts with Zero and ends with n-1 where
+n is size of the Array.
+* An Array is a DS. (Linear)
+* An Array is Memory IN-EFFICIENT DS.
+* Time taken to access any element in an Array is same.
+i.e. O(1) (one unit of time). Hence an Array is Time Efficient DS
+
+
+PROBLEMS ON RECURSIVE FUNCTIONS:
+1. Find factorial of a number using recursion. (Bad Idea)
+2. Find sum of digits of a number
+3. Find smallest number in an array of size N
+4. Print the Fibo series of N terms (1st 2 terms are 1 and 2)
+---------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argCount, char *args[])
+{
+    int numberOfLines = atoi(args[1]);
+
+    for (int i = 1; i <= numberOfLines; i++)
+    {
+        for (int j = 1; j <= numberOfLines; j++)
+        {
+            putc('*', stdout);
+            putc(' ', stdout);
+        }
+        putc('\n', stdout);
+    }
+}
+
+/*
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+ */
+---------------------------------------------------
+PROBLEMS ON 2D ARRAYS:
+Find sum of 2 matrices
+Find the transpose of a matrix
+Find product of 2 matrices
+find sum of the total score of all players
+
+Git Lab:
+create a project
+Give the credentials
+choose public
+un check project config
+Click upload file otpion to ipload files
+OR use drag and drop
+---------------------------------------------------
+Strings
+
+A string is a data
+A string is made up of one or more characters
+A string can be roughly devided into 2:
+	Alphabetic
+	Alphanumeric
+
+All the characters of a string together make-up one data
+For example, "Ayodhya"
+
+This data is a place name. Thus all the 7 characters of it together is one data.
+To store one character, we need one character variable.
+Thus to store "Ayodhya" we need 7 character variables.
+
+char ch1 = 'A', ch2 = 'y', ch3 = 'o', ch4 = 'd', ch5 = 'h', ch6 = 'y', ch7 = 'a';
+
+Now, we have store one data in 7 variables.
+If we wish to send this one data to a function, then we must send 7 args.
+
+However, passing one Arg as one data is good.
+Hence We must save these 7 characters which are closely related together in one variable.
+Hence we use charcater arrays to store string data.
+
+char placeName1[] = "Ayodhya";
+Here we have stored the data as one data and not 7 data.
+Also the string data has one implicit property when it is stored as a string in an array. That is, the excape sequence (null character) '\0' is stored as "end of string" character always.
+
+char placeName2[] = {'A', 'y', 'o', 'd', 'h' 'y', 'a'};
+Here the '\0' will not be stored at the end.
+
+Thus, the sizeof placeName1 is 8 characters in memory.
+And, the sizeof placeName2 is 7 character in memory.
+
+Way to initialize a string:
+char userString1[32] = ""; // empty string
+char userString2[32] = { '\0' }; // empty string
+char userString3[] = "Ayodhya"; 
+char userString4[] = {'A', 'y', 'o', 'd', 'h' 'y', 'a', '\0'};
+
+STRING HANDLING FUNCTIONS:
+
+strlen()
+It is used to find length of a string
+Prototype:
+int strlen(const char*);
+size_t strlen(const char*);
+
+strcpy()
+It is used to copy a string into another
+Prototype:
+char* strcpy(char*, const char*);
+Usage: strcpy(destination, source);
+strcpy() returns the address of the destination string
+
+strcat()
+It is used to append/concatinate a string to other
+Prototype:
+char* strcat(char*, const char*);
+Usage: strcat(destination, source);
+strcat() returns the address of the destination string
+Note that, the source string is copied from end of the destination.
+Hence to concatinate the string, we must 1st find length of the destination string.
+
+strrev()
+It is used to reverse a string
+char* strrev(char*)
+It returns address of the o/p string which happens to be the i/p array itself
+
+strchr()
+It finds address of 1st occurance of the character in the string
+char* strchr(const char*, char)
+It returns the address of the 1st occurance of the given character in the string. If not found, it return NULL
+
+strrchr()
+It finds address of last occurance of the character in the string
+char* strrchr(const char*, char)
+It returns the address of the last occurance of the given character in the string. If not found, it return NULL
+To do this, the function starts the search from the end.
+Hence strrchr() 1st uses strlen()
+
+strcmp()
+It (case sensitive) compares two strings and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int strcmp(const char*, const char*)
+
+stricmp()
+It (case in-sensitive) compares two strings and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int stricmp(const char*, const char*)
+
+strncmp()
+It (case sensitive) compares two strings for 1st n characters only and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int strncmp(const char*, const char*, int)
+
+strstr()
+To check if a sub string is present in the given string
+It returns the address where the sub string is found, else NULL
+Prototype:
+char* strstr(const char* mainString, char* subString);
+
+strtok()
+
+
+--------------------------------------------------
+Programs on strings
+2D array example on strings
+function pointer
+structure (definition, array of structures, nested, padding, bit fields, pointer to a structure, function pointer inside a structure, SRS)
+DMA (malloc, calloc)
+Dynamic Array
+Stack and Queue implementation
+
+3D String Example:
+1. Store first name and last name of the last 5 presidents of Bhaarat
+
+2D String Example:
+Accept the strings from command line as given:
+"karnataka bengaluru" "odhisa bhubaneswar" "sikkim gangtok" "tripura agartala" "goa panjim"
+
+You can take any number of strings as you wish.
+Each string is made up of state-capital pair which is seperated by space
+
+Now, create 2 2D char arrays
+states[10][32];
+capitals[10][32];
+
+Now seperate the states and capitals and store them in the given 2 arrays and print them with proper formatting.
+
+
+"goa panjim"
+Find the address of space (ADDRESS)
+Now find number of characters in the state (COUNT)
+now copy the state part of the string from args[i] to states[i]
+now copy the capital part of the string to capitals[i]
+
+addressOfSpace = strchr(args[i], ' ');
+now take int variable = address of space - address of 1st element
+count = addressOfSpace - args[i];
+strncpy(states[i], args[i], count);
+---------------------------------------------
+FUNCTION POINTER
+
+As we have pointer that points to a variable (or another pointer which is also a variable), we can also have pointer pointing to a function.
+
+A pointer of type float* can point to any variable in the function/program of type float.
+
+Thus, we know that variables ahev data type.
+
+And functions have prototypes.
+Thus a pointer of a specific prototype can point to any function with that particular prototype.
+----------------------------------------------------
+DYNAMIC MEMORY ALLOCATION
+
+All the variables we have declared so far in all our programs, will be created as soon as the control goes to the declartive statement.
+
+example: int num1, num2, num3;
+Here these 3 variables will be created when control goes there during runtime and nobody can stop it nor we can modify the size or data type or number of variables.
+
+Example2:
+flost studentAverageScores[50];
+
+Here the programmer has defined this statement.
+Hence the programmer is assumming that there might be 50 students whose average scores need to be stored.
+
+However, it is the users/customers/client who knows the number of students.
+
+Now, if the user stores only 10 scores then 40 variables/elements of the array are wasted.
+In another case when the user wants to store 80 scores, then there will be shortage of 30 variables.
+
+So it is good if the user can decide the size of the array.
+However, the user comes into picture during runtime only.
+And during runtime, it is impossible to change/modify the program code.
+Hence we need a new way to decide the amount of memory to be allocated during runtime.
+And this mechanism is called as DYNAMIC (RUNTIME) MEMORY ALLOCATION.
+
+We know C is a procedural language and hence to achieve this, we have 3 functions available from stdlib.h
+
+malloc()
+calloc()
+realloc()
+free()
+
+malloc():
+It takes the number of bytes as argument and it allocates memory in Heap. And it returns the address of 1st byte.
+***Note: malloc() returns an address. This means in the code, there must a pointer to receive this address.
+The pointer is a variable.
+And all variables have their DT
+
+malloc() is used to allocate memory to store data of any DT including user defined DTs
+Hence the address which malloc returns is a GENERIC ADDRESS.
+A generic address is one whose DT is not yet assertained.
+Thus the prototype of malloc is:
+
+void* malloc(int);
+More correctly it is,
+void* malloc(size_t);
+
+*** Note that the memory allocated in Heap area, does not carry a name. It must be accessed only via its address.
+
+*** Note that, the memory allocated in the Heap, must be deallocated using free(). The memory deallocation from Heap is not Storage class dependent.
+
+Implement Linear Search using Dynamic Array.
+Also discuss the efficiency of Sequential Search.
+
+Read N, the size of Array
+Create the array in Heap
+Read the N numbers of the Array
+Read the number to be searched in the Array
+Call the function linearSearch() to implement the logic
+Print the result according to the return value of the function.
+
+
+HOW TO USE malloc():
+
+Say suppose we want to store 5 float numbers. We know float is 4 bytes
+
+malloc(20)
+This allocates 20 bytes and now we can store 5 float values.
+
+However, what is some day in future, the size of float changes to 8 bytes?
+Then this code malloc(20) will fail. Because then we would need 40 bytes to store 5 float values.
+
+So, we change the code like this:
+malloc(sizeof(float) * 5);
+
+Now, this code works fine, doesn't matter what ever the size of float would be.
+However, this will always allocate memory for only and exactly 5 float values.
+Also note that, it is the programmer who is deciding how many float values to be stored.
+
+What if we need to store 10 float values in one execution and 5 in another and 20 float values in 3rd execution and so on ??
+
+Hence Read N from user and user can decide how many values he/she wish to store.
+And then call: malloc(sizeof(float) * N)
+------------------------------------------------------------
+Stack Implementation using Dynamic Array:
+
+1, 3, 4 5, 
+
+-----------------------------------------------------------
+structures
+unions
+pre processors
+Linked Lists
+Algorithms and their efficiencies
+---------------------------------------------------------------------
+DAY8 Friday 29-11-2024
+
+structures:
+We know that Array is a DS where we biond data. And, the data must be of the same DT in the array.
+
+How ever in real life we must have work with data which are properties of the entity from the specific domain.
+
+For example, from the banking domain, the entity Account as following properties:
+acc_num
+acc_holder_name
+balance
+type
+phone_num
+
+Now, let us look aat the DT of these properties
+acc_num				unsigned int
+acc_holder_name		char[64]
+balance				float
+type				char[32]
+phone_num			unsigned long long int
+
+We observe that the DT of the properties are different or their sizes are different.
+But all these properties belong to the same object.
+Hence we must have to bind them (storing them together)
+
+But we cannot use an array to do this.
+
+Thus, we have a new feature of the language:
+structure
+
+In structure we can bind the data either of differnt types or different sizes.
+struct is the keyword to defined a structure.
+
+struct Account {
+	unsigned int acc_num
+	char acc_holder_name[32];
+	float balance;
+	char type[16];
+	unsigned long long int phone_num;
+};
+
+The above statements together are called structure definition
+Note that, there is no memory allocation for the above definition.
+*** The definition is the information being passed by the programmer to the compiler.
+The compiler makes Book Keeping about the structure (Stores information about the structure)
+Thus structure definition is nothing but Meta Data of the structure.
+
+Account
+memebr_No	member_name		member_DT		member_size
+1			acc_num			unsigned int	4
+2			acc_holder_name	char*			32
+3			balance			float			4
+4			type			char*			16
+5			phone_num		u long long int	8
+
+Since in the structure definition there is no memory allocation, we cannot assign/initialize values to the memebers/fields/attributes/elements of the structure
+
+If the structure is defined inside a function then it is known only by that function.
+Hence we usually define a structure globally (outside the functions)
+
+struct Account {
+	unsigned int acc_num
+	char acc_holder_name[32];
+	float balance;
+	char type[16];
+	unsigned long long int phone_num;
+};
+struct Account acc1;
+
+Here memory is allocated to the structure variable acc1 which is 64 bytes.
+----------------
+struct Account {
+	unsigned int acc_num
+	char acc_holder_name[33];
+	float balance;
+	char type[16];
+	unsigned long long int phone_num;
+}acc2;
+
+Note that, we can create the structure object/variable as soon as it is defined as shown above.
+Now, the size of acc2 is not 65 bytes but rather 72 bytes. The extra 7 bytes we get is called as STRUCTURE PADDING
+
+To create a structure object we must use the declaration as below:
+struct Account acc1;
+
+Here the struct keyword is necessary. However, in C++ structures, the use of struct keyword while creating an object is optional.
+
+To avoid using struct keyword while creating the objects, we must use typedef:
+
+typedef struct Account {
+	unsigned int acc_num
+	char acc_holder_name[33];
+	float balance;
+	char type[16];
+	unsigned long long int phone_num;
+}Account;
+// The name "Account" in Line #501 is the Alias name we are creating for struct Account
+
+Thus, now, we can create structure objects using any of the 2 below declarative statements:
+
+struct Account acc1;
+Account acc1;
+
+Array of structures:
+Suppose I want to create many accounts at a time, say 100.
+
+Account accounts[100];
+Here we can store details of 100 different accounts. But we know that an Array is not a memory efficient DS.
+And here, every account(struture) itself is a heavy object. Thus creating array of heavy objects is a bad idea.
+Hence we must either create the array of structures in Heap or we must use Linked lists to avoid memory inefficiency.
+
+Pointer to a structure: struct3.c
+
+bit fields:
+When ever we want to allocate memory in terms of bits
+Example: Suppose a university has declared the rules for admission in its colleges as follow:
+minimum age: 18
+maxinum age: 75
+
+Lets implement this: struct4.c (day8)
+
+structure within a structure
+pointer inside a structure
+function pointer as structure field
+SRS
+
+typedef struct Employee {
+     int id;
+     char name[32];
+     float salary;
+     struct Employee* emp;
+}Employee;
+
+
+Employee
+memebr_No	member_name		member_DT		member_size
+1			id				int				4
+2			name			char*			32
+3			salary			float			4
+4			emp				Employee*		4	
+
+int main() {
+	Employee employee = {101, "nithin", 199000.0f, NULL};
+	printf("Size of Employee = %d", sizeof(employee);
+}
+
+
+Linked Lists
+Binary Search
+-------------------
+Bit manupalation
+File I/O
+enum
+union
